@@ -1,0 +1,87 @@
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+  /* 解决iphone13上点击阴影 */
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #fff;
+}
+
+a {
+  text-decoration: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+input,
+button,
+textarea {
+  border: none;
+  display: block;
+  background: none;
+  padding: 0;
+}
+
+div,
+span,
+ul,
+li,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+input,
+textarea {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  word-break: break-word;
+}
+
+input:focus,
+button:focus {
+  outline: none;
+}
+
+.ar {
+  direction: rtl;
+}
+
+.page {
+  min-height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.fix {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  background-color: orange;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.elps {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}

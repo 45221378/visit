@@ -1,0 +1,20 @@
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 750px;
+}
+
+.samllimg {
+  min-height: 550px;
+}
+
+.samllimg img {
+  width: 50vw;
+}
+
+.normalimg img {
+  width: 50vw;
+}

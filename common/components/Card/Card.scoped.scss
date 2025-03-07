@@ -1,0 +1,30 @@
+.card {
+  width: 702px;
+  margin: 10px auto;
+  position: relative;
+  padding: 54px 0 20px 0;
+  border-radius: 40px;
+  // background: url(/src/assets/v1/card1.png) no-repeat left top/702px 140px,
+  //   url(/src/assets/v1/card3.png) no-repeat left bottom/702px 79px;
+
+  &::before {
+    z-index: 3;
+    content: '';
+    position: absolute;
+    top: 139px;
+    left: 0;
+    bottom: 78px;
+    width: 702px;
+    // background: url(/src/assets/v1/card2.png) repeat-y left top/ 702px 89px;
+    pointer-events: none;
+  }
+
+  .card-chid {
+    z-index: 4;
+    width: 702px;
+    min-height: 500px;
+    margin: 0 auto;
+    position: relative;
+    padding: 0 0 38px 0;
+  }
+}

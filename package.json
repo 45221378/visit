@@ -1,0 +1,45 @@
+{
+  "name": "act-out",
+  "version": "1.0.0",
+  "private": true,
+  "author": "liang",
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "scripts": {
+    "start": "vite",
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "format": "npx prettier --write .",
+    "lint": "npx eslint './**/*.{tsx,ts,js,jsx}'",
+    "scanner": "zh-scanner --files './src/**/*.{tsx,ts}' --out ./src/locale/${npm_package_name}.json"
+  },
+  "dependencies": {
+    "@ola/utils": "^1.2.3",
+    "axios": "^1.5.0",
+    "clipboard": "^2.0.11",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^6.3.0",
+    "react-use": "^17.4.0",
+    "spark-md5": "^3.0.2",
+    "vconsole": "^3.9.5"
+  },
+  "devDependencies": {
+    "@ola/babel-plugin-react-scoped-css": "^1.1.2",
+    "@ola/rollup-plugin-scoped-css": "^1.0.2",
+    "@ola/zh-scanner": "^1.0.0",
+    "@types/node": "16.4.2",
+    "@types/react": "^17.0.58",
+    "@types/react-dom": "^17.0.19",
+    "@types/spark-md5": "^3.0.2",
+    "@vitejs/plugin-legacy": "^2.0.0",
+    "@vitejs/plugin-react": "^1.2.0",
+    "postcss-px-to-viewport": "^1.1.1",
+    "sass": "^1.69.5",
+    "terser": "^5.14.2",
+    "typescript": "4.8.4",
+    "vite": "^3.2.5"
+  }
+}
