@@ -1,8 +1,8 @@
 {
-  "name": "act-out",
+  "name": "visit",
   "version": "1.0.0",
   "private": true,
-  "author": "liang",
+  "author": "",
   "engines": {
     "node": ">=16.0.0"
   },

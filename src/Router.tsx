@@ -3,7 +3,7 @@ import { Suspense } from 'react'
 import NotFound from '/common/components/404/NotFound'
 import Loading from '/common/components/Loading/Loading'
 import Invite from './pages/Invite/Invite'
-
+import Login from './pages/Login/Login'
 export default function Router() {
   return (
     <Suspense fallback={<Loading style={{ height: '100vh' }} />}>
@@ -11,6 +11,7 @@ export default function Router() {
         <Routes>
           <Route path="/" element={<NotFound />} />
           <Route path="invite" element={<Invite />} />
+          <Route path="login" element={<Login />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
