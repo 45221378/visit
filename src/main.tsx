@@ -1,7 +1,7 @@
 import { render } from 'react-dom'
 import '/common/reset.css'
+import './init-anti.css'
 import setConsole from '/common/setConsole'
-import { Native } from '/common/native'
 
 const root = document.getElementById('root') as HTMLElement
 async function setup() {

@@ -1,0 +1,27 @@
+.adm-form {
+  width: 630px;
+  margin: 0 auto;
+  border: none;
+}
+
+.adm-form .adm-list.adm-list,
+.adm-form .adm-list-default .adm-list-body {
+  border: none;
+}
+
+.adm-list-item {
+  width: 630px;
+  height: 88px;
+  background: linear-gradient(90deg, rgba(255, 232, 215, 0.65) 0%, #FFFFFF 33%);
+  border-radius: 8px 8px 8px 8px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  margin: 0 0 20px 0;
+}
+
+.adm-form .adm-list-item.adm-form-item-horizontal .adm-list-item-content-prefix {
+  padding: 0;
+}
+
+.adm-form .adm-list-item-content-main {
+  padding: 0;
+}

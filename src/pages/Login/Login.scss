@@ -1,0 +1,52 @@
+.login {
+  width: 100vw;
+  min-height: 100vh;
+  position: relative;
+  background: #F5F5F5;
+
+  .nav-top {
+    width: 100vw;
+    height: 120px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 20px;
+
+    .logo {
+      width: 113px;
+      height: 48px;
+      background: url(/src/assets/tke.png) no-repeat left top/100% 100%;
+    }
+  }
+
+  .banner {
+    background: url(/src/assets/name1.png) no-repeat center 100px/678px 53px;
+    width: 750px;
+    height: 500px;
+    padding: 178px 0 0 0;
+
+    .line {
+      width: 500px;
+      height: 8px;
+      background: linear-gradient( 90deg, rgba(255,255,255,0) 0%, #FFFFFF 50%, rgba(255,255,255,0) 100%);
+      margin: 0 auto;
+    }
+  }
+}
+
+.form-info {
+  background: url(/src/assets/title-bg2.png) no-repeat left top/100% 100%;
+  width: 710px;
+  height: 786px;
+  margin: 0 auto;
+  padding: 60px 0 0 0;
+
+  .top-p {
+    font-size: 36px;
+    color: #333333;
+    font-weight: 800;
+    width: 100%;
+    text-align: center;
+    padding: 0 10px 10px 10px;
+  }
+}
