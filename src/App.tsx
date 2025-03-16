@@ -2,8 +2,6 @@ import Router from './Router'
 import ErrorBoundary from '/common/components/ErrorBoundary/ErrorBoundary'
 import Toast from '/common/components/Toast/Toast'
 import Modal from '/common/components/Modal/Modal'
-import Share from '/common/components/Share/Share'
-import Navigation from '/common/components/Navigation/Navigation'
 import { GlobalContextProvider } from './context/globalContext'
 import ola from './ola'
 

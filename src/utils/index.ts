@@ -1,16 +1,10 @@
 import ola from '../ola'
 import { useState, useCallback, useEffect } from 'react'
-import { openRoom, showFloatImageMini } from '/common/native'
 import { checkWebpFeature, leftPad } from '@ola/utils'
 export function getAvatar(iconPath: string, head150 = true) {
   const oss = ola.app.config.oss
   if (head150) return `${oss}/${iconPath}!head150`
   return `${oss}/${iconPath}`
-}
-
-export function onAvatarClick(rid: string | number, uid: number) {
-  if (+rid > 0) return openRoom(rid)
-  if (uid) return showFloatImageMini(uid)
 }
 
 export function getTimeDate(stamp: number, nozero?: boolean) {
