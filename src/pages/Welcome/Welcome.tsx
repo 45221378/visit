@@ -1,0 +1,25 @@
+
+import './index.scss'
+const WelcomePage = ()=>{
+  return <div className="welcome">
+      <div className="wel-top">
+        <div className="logo"></div>
+      </div>
+      <div className="wel-two">
+        <div className="wel-text">
+            <div className="text">
+            您已完成TKE中国工厂安全须知
+            </div>
+            <div className="text">
+            感谢您的配合！
+            </div>
+            <div className="text">
+            期待未来与您在工厂相见！
+            </div>
+        </div>
+        <div className="arrow animte"></div>
+      </div>
+  </div>
+}
+
+export default WelcomePage
