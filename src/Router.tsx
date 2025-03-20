@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate , HashRouter} from "react-router-dom";
 import { Suspense } from "react";
 import NotFound from "/common/components/404/NotFound";
 import Loading from "/common/components/Loading/Loading";
@@ -10,7 +10,8 @@ import WelcomePage from "./pages/Welcome/Welcome";
 export default function Router() {
   return (
     <Suspense fallback={<Loading style={{ height: "100vh" }} />}>
-      <BrowserRouter basename={import.meta.env.BASE_URL}>
+      {/* basename={import.meta.env.BASE_URL} */}
+      <HashRouter >
         <Routes>
           <Route path="/" element={<Navigate to="/login" replace />} />
           <Route path="invite" element={<Invite />} />
@@ -19,7 +20,7 @@ export default function Router() {
           <Route path="welcome" element={<WelcomePage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </Suspense>
   );
 }

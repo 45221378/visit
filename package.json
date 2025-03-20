@@ -9,24 +9,26 @@
   "scripts": {
     "start": "vite",
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "tsc && vite build && node mainfest.js",
     "preview": "vite preview",
     "format": "npx prettier --write .",
     "lint": "npx eslint './**/*.{tsx,ts,js,jsx}'",
     "scanner": "zh-scanner --files './src/**/*.{tsx,ts}' --out ./src/locale/${npm_package_name}.json"
   },
   "dependencies": {
-    "@ola/utils": "^1.2.3",
+    "@ola/report": "^0.0.5",
+    "@ola/utils": "^1.2.2",
     "antd": "^5.24.3",
-    "antd-mobile": "^5.38.1",
+    "antd-mobile": "^5.39.0",
     "axios": "^1.5.0",
-    "clipboard": "^2.0.11",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-router-dom": "^6.3.0",
     "react-use": "^17.4.0",
     "spark-md5": "^3.0.2",
-    "vconsole": "^3.9.5"
+    "thinkingdata-browser": "^2.0.0-beta.1",
+    "vconsole": "^3.9.5",
+    "video-animation-player": "^1.0.5"
   },
   "devDependencies": {
     "@ola/babel-plugin-react-scoped-css": "^1.1.2",

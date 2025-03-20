@@ -6,9 +6,8 @@ import axios from 'axios'
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { countryList } from "./country";
-// import { Form, Input } from "antd";
-// import { Form, Input  } from "antd-mobile/2x";
-
+import Icon1 from "/src/assets/icon1.png"
+import  Playdis from "/src/assets/play-dis.png"
 export default function Login() {
   const [form] = Form.useForm()
   const  navigate = useNavigate()
@@ -72,17 +71,24 @@ export default function Login() {
         if(values.country){
           if(values.name){
             if(values.mobile){
-              
+              const phoneRegex = /^1[3-9]\d{9}$/;
+              if (!phoneRegex.test(values.mobile)) {
+                Toast.show({
+                  content: '请输入有效的手机号',
+                });
+                return;
+              }
               axios.post('https://admin.somark.cn/api/visitor/register',{
                 ...values,
                 visit_date: doGetCurrentTime()
               })
               .then((res:any)=>{
+                console.log(res)
                 if(res.data.code==200){
                   Toast.show({
                     content: '登记成功',
                   })
-                  navigate('/home')
+                  navigate(`/home?id=${res.data.data.id}`)
                 }else{
                   Toast.show({
                     content: '登记失败,请重新再试',
@@ -90,7 +96,9 @@ export default function Login() {
                 }
               })
               .catch((err)=>{
-
+                Toast.show({
+                  content: '登记失败,请重新再试',
+                })
               })
             }else{
               Toast.show({
@@ -132,12 +140,12 @@ export default function Login() {
             <Dropdown menu={{ items , selectable: true, onClick }} placement="bottom">
               <div className="change-lan">
                 <span>{language=='CN'?'中文':'English'}</span>
-                <img src="/src/assets/icon1.png" alt="" className="down" />
+                <img src={Icon1} alt="" className="down" />
               </div>
             </Dropdown>
             
             <div className="play-music">
-              <img src="/src/assets/play-dis.png" alt="" className="icon" />
+              <img src={Playdis} alt="" className="icon" />
             </div>
           </div>
         </div>

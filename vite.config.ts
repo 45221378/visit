@@ -15,14 +15,15 @@ function genBase() {
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: genBase(),
+  // base: genBase(),
+  base:'',
   plugins: [
     react({
       babel: {
         plugins: [babelPluginReactScopedCSS, babelPluginZhReplacer]
       }
     }),
-    rollupPluginScopedCSS,
+    rollupPluginScopedCSS(),
     legacy({ targets: ['iOS 11', 'Android 4.4'], modernPolyfills: true })
   ],
   server: {
