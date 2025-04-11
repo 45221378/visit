@@ -30,7 +30,7 @@ const HomePage = () => {
   const id = queryParams.get('id');
   const getComplete = () => {
     axios
-      .get("https://admin.somark.cn/api/visitor/register", {
+      .get("https://admin.somark.cn/api/visitor/update", {
         params: { id },
       })
       .then((res: any) => {
