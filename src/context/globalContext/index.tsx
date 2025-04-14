@@ -2,7 +2,10 @@
 
 import { createContext, useContext, type ReactNode } from 'react'
 
-const useGlobalData = () => ({})
+import useAudioCtx from './audioCtx'
+const useGlobalData = () => ({
+  ...useAudioCtx(),
+})
 
 const GlobalContext = createContext<ReturnType<typeof useGlobalData>>({} as any)
 

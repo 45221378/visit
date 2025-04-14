@@ -4,6 +4,7 @@ import Toast from '/common/components/Toast/Toast'
 import Modal from '/common/components/Modal/Modal'
 import { GlobalContextProvider } from './context/globalContext'
 import ola from './ola'
+import MyAudio from './pages/Audio/Audio'
 
 const env = {
   lan: ola.user.lan,
@@ -18,6 +19,7 @@ export default function App() {
       <Toast />
       <Modal />
       <GlobalContextProvider>
+        <MyAudio />
         <Router />
       </GlobalContextProvider>
     </ErrorBoundary>

@@ -1,17 +1,23 @@
 import { Select, Form, Input, Row, Col, Dropdown } from "antd";
 import "./Login.scss";
+import "/src/font.scss";
 import { MobileOutlined } from "@ant-design/icons";
-import { Toast } from "antd-mobile/2x";
+import { Toast ,  Radio, Space , Button} from "antd-mobile/2x";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { countryList } from "./country";
 import Icon1 from "/src/assets/icon1.png";
-import Playdis from "/src/assets/play-dis.png";
+import Playdis from "/src/assets/new/play-dis1.png";
+import PlaydisTwo from "/src/assets/play-dis.png";
+
+import { useGlobalContext } from "/src/context/globalContext";
 export default function Login() {
   const [form] = Form.useForm();
   const navigate = useNavigate();
   const [language, setLanguage] = useState("CN");
+  const [isRotated, setIsRotated] = useState(false);
+  const {isPlaying , doPlayAudioToggle} = useGlobalContext()
   const userTpeList = [
     {
       value: "0",
@@ -48,16 +54,24 @@ export default function Login() {
     {
       key: "CN",
       label: "中文",
+      danger: language == "CN",
     },
     {
       key: "EN",
       label: "English",
+      danger: language == "EN",
     },
   ];
 
   const onClick = ({ key }: any) => {
     setLanguage(key);
   };
+
+
+  const handleDropdownVisibleChange = (visible: boolean) => {
+    setIsRotated(visible);
+  };
+
 
   const doGetCurrentTime = () => {
     const visitDate = new Date();
@@ -139,11 +153,16 @@ export default function Login() {
       })
       .catch((err) => {});
   };
+
+  useEffect(() => {
+    // 确保在初始化时不应用动画
+    setIsRotated(false);
+  }, []);
   return (
     <div className="login">
       {/* <div className="main-pic"></div> */}
       {/* <div className="login-box"></div> */}
-      <div className="login-two"></div>
+      {/* <div className="login-two"></div> */}
 
       <div className="login-main">
         <div className="nav-top">
@@ -152,15 +171,30 @@ export default function Login() {
             <Dropdown
               menu={{ items, selectable: true, onClick }}
               placement="bottom"
+              onOpenChange={handleDropdownVisibleChange}
+              
+              open={isRotated}
             >
               <div className="change-lan">
                 <span>{language == "CN" ? "中文" : "English"}</span>
-                <img src={Icon1} alt="" className="down" />
+                <img src={Icon1} alt=""  className={`icon-img ${isRotated ? 'rotated' : 'not-rotated'}`}/>
               </div>
             </Dropdown>
 
+            {/* <Dropdown className="language-dropdown">
+              <Dropdown.Item key='sorter' title={language == "CN" ? "中文" : "English"}>
+                <Space direction='vertical' className="my-space" >
+                  <Button className="language-btn" onClick={()=>onClick('CN')}>
+                    中文
+                  </Button>
+                  <Button className="language-btn" onClick={()=>onClick('EN')} >
+                    English
+                  </Button>
+                </Space>
+              </Dropdown.Item>
+            </Dropdown> */}
             <div className="play-music">
-              <img src={Playdis} alt="" className="icon" />
+              <img src={!isPlaying?Playdis:PlaydisTwo}  onClick={doPlayAudioToggle}  alt="" className="icon" />
             </div>
           </div>
         </div>

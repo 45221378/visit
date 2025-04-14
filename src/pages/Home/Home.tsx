@@ -1,9 +1,9 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./Home.scope.scss";
 import { Title } from "./Title";
 import ImgOne from "/src/assets/images/img-one.png";
 
-import playdis from "/src/assets/play-dis.png";
+import playdis from "/src/assets/new/play-dis1.png";
 import Imgtwo from "/src/assets/images/imgtwo.png";
 import img3 from "/src/assets/images/img-3.png";
 import img4 from "/src/assets/images/img-4.png";
@@ -21,44 +21,65 @@ import PlayIcon from "/src/assets/images/play.png";
 
 import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { Toast } from "antd-mobile/2x";
+
+import Playdis from "/src/assets/new/play-dis1.png";
+import PlaydisTwo from "/src/assets/play-dis.png";
+
+import { useGlobalContext } from "/src/context/globalContext";
 const HomePage = () => {
   const [isPlay, setIsPlay] = useState<boolean>(false);
+  const [endedVideo, setEndedVideo] = useState<boolean>(false);
+  const {isPlaying , doPlayAudioToggle} = useGlobalContext()
+
   const videoRef: any = useRef(null);
   const navigate = useNavigate();
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
-  const id = queryParams.get('id');
+  const id = queryParams.get("id");
   const getComplete = () => {
-    axios
-      .get("https://admin.somark.cn/api/visitor/update", {
-        params: { id },
-      })
-      .then((res: any) => {
-        navigate("/welcome");
-      });
+    if (endedVideo) {
+      axios
+        .get("https://admin.somark.cn/api/visitor/update", {
+          params: { id },
+        })
+        .then((res: any) => {
+          navigate("/welcome");
+        });
+    } else {
+      Toast.show("请观看完视频");
+    }
   };
   const playVideoHandle = () => {
     setIsPlay(true);
 
     setTimeout(() => {
-      console.log(videoRef);
       videoRef.current.play();
     }, 10);
   };
+  useEffect(() => {
+    if (isPlay) {
+      videoRef.current.addEventListener("ended", () => {
+        setIsPlay(false);
+        setEndedVideo(true);
+      });
+    }
+  }, [isPlay]);
   return (
     <div className="home">
       <div className="home-top">
         <div className="top-box">
           <div className="left-icon"></div>
           <div className="right-icon">
-            <img src={playdis} alt="" className="icon" />
+            {/* <img src={playdis} alt="" className="icon" /> */}
+            <img src={!isPlaying?Playdis:PlaydisTwo}  onClick={doPlayAudioToggle}  alt="" className="icon" />
           </div>
         </div>
         <div className="top-text"></div>
       </div>
 
       <div className="home-box">
-        <div className="home-one ">
+        {/* <div className="home-one ">
           <Title text="进入厂区前准备"></Title>
           <div className="home-one-text">
             <p className="one-text">请提前与蒂升工作人员取得联系</p>
@@ -71,9 +92,9 @@ const HomePage = () => {
               <img src={img3} className="two-right-img" />
             </div>
           </div>
-        </div>
+        </div> */}
 
-        <div className="home-two">
+        {/* <div className="home-two">
           <Title text="参观前的个人防护"></Title>
           <div className="home-one-text">
             <p className="one-text">进入生产区域参观前</p>
@@ -103,7 +124,7 @@ const HomePage = () => {
               <img src={img9} alt="" />
             </div>
           </div>
-        </div>
+        </div> */}
 
         <div className="home-three">
           <Title text="TKE中国区工厂参观安全指引"></Title>
@@ -135,13 +156,13 @@ const HomePage = () => {
           </div>
         </div>
 
-        <div className="home-four">
+        {/* <div className="home-four">
           <Title text="风险提示"></Title>
           <img src={img12} alt="" className="safe" />
           <div className="four-box">
             防止滑倒和绊倒、防止被物体撞击或挤压、防止被车辆撞击、防止触电、防止吊物风险
           </div>
-        </div>
+        </div> */}
 
         <div
           className="complete-btn"

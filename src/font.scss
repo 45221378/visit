@@ -1,0 +1,36 @@
+@font-face {
+  font-family: zhcn1;
+  src: url("/src/assets/font/zh1.otf");
+}
+
+@font-face {
+  font-family: zhcn2;
+  src: url("/src/assets/font/zh2.otf");
+}
+
+@font-face {
+  font-family: en1;
+  src: url("/src/assets/font/en1.ttf");
+}
+
+@font-face {
+  font-family: en2;
+  src: url("/src/assets/font/en2.ttf");
+}
+
+
+.font-zhcn1 {
+  font-family: zhcn1;
+}
+
+.font-zhcn2 {
+  font-family: zhcn2;
+}
+
+.font-en1 {
+  font-family: en1;
+}
+
+.font-en2 {
+  font-family: en2;
+}

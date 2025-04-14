@@ -1,3 +1,5 @@
+'skip scanner'
+
 export const countryList = [
     {
         "name": "China",
