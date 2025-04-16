@@ -1,0 +1,44 @@
+$base-path: 'https://xs-image.pati.chat/static/h5/webpa/birthday/';
+
+.broadcast {
+  width: 608px;
+  height: 82px;
+  margin: 0 auto;
+  padding: 14px 18px 14px 66px;
+  background: url('#{$base-path}icon1.png') no-repeat 20px center / 32px 30px,
+    url('#{$base-path}broadbg.png') no-repeat 0 0 / 100%;
+
+  .broadcast-wrap {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    box-sizing: border-box;
+    position: relative;
+
+    .broadcast-list {
+      display: flex;
+      flex-direction: column;
+      animation: toBottom linear infinite normal;
+
+      .broadcast-item {
+        width: 100%;
+        overflow: hidden;
+        margin: 0 0 14px 0;
+        font-size: 24px;
+        color: #fff;
+        font-weight: 500;
+      }
+    }
+
+    @keyframes toBottom {
+      0% {
+        transform: translate3d(0, 0, 0);
+      }
+
+      100% {
+        transform: translate3d(0, -50%, 0);
+      }
+    }
+  }
+}

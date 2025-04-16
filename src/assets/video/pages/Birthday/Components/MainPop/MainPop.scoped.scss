@@ -1,0 +1,158 @@
+$base-path: 'https://xs-image.pati.chat/static/h5/webpa/birthday/';
+
+.main-pop {
+  background: url('#{$base-path}m-bg1.png') no-repeat left top / 626px 235px,
+    url('#{$base-path}m-bg3.png') no-repeat left bottom / 626px 314px;
+  width: 626px;
+  min-height: 564px;
+  position: relative;
+
+  &::after {
+    content: '';
+    pointer-events: none;
+    position: absolute;
+    top: 234px;
+    bottom: 313px;
+    left: 0;
+    background: url('#{$base-path}m-bg2.png') repeat-y left top / 626px 1px;
+    width: 626px;
+  }
+
+  .main-pop-children {
+    z-index: 3;
+    position: relative;
+    padding: 150px 50px 40px 50px;
+  }
+}
+
+.title {
+  background: url('#{$base-path}m-title.png') no-repeat 0 0 / 100%;
+  width: 520px;
+  height: 158px;
+  position: absolute;
+  top: -40px;
+  left: 54px;
+  font-size: 28px;
+  color: #fff;
+  font-weight: 500;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 60px 22px 60px;
+}
+
+.pp {
+  font-size: 28px;
+  color: rgba(152, 77, 225, 1);
+  font-weight: 400;
+  margin: 4px 0;
+}
+
+.mgtb1 {
+  margin: 18px 0 50px 0;
+}
+
+.chapter {
+  font-size: 32px;
+  color: rgba(152, 77, 225, 1);
+  font-weight: 500;
+  margin: 10px 0 14px 0;
+}
+
+.scroll-y {
+  height: 600px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.time-p {
+  color: rgba(152, 77, 225, 1);
+  font-size: 32px;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto 30px;
+  background: url('#{$base-path}bg65.png') no-repeat 0 0 / 100%;
+  width: 480px;
+  height: 118px;
+}
+
+.b-tips {
+  font-size: 24px;
+  color: rgba(249, 70, 237, 1);
+  text-align: center;
+}
+
+.sure-birth {
+  background: url('#{$base-path}receive.png') no-repeat 0 0 / 100%;
+  width: 368px;
+  height: 104px;
+  font-weight: 600;
+  font-size: 28px;
+  color: #fff;
+  margin: 20px auto 0;
+}
+
+.sure {
+  background: url('#{$base-path}receive.png') no-repeat 0 0 / 100%;
+  width: 368px;
+  height: 104px;
+  font-weight: 600;
+  font-size: 28px;
+  color: #fff;
+  margin: 20px auto 0;
+}
+
+.page-rule {
+  background: rgba(203, 175, 250, 1);
+  padding: 100px 0 100px;
+}
+
+.page-rule-content {
+  padding: 30px 20px 0px 20px;
+}
+
+.show-gift {
+  margin: 20px auto 0;
+  width: 100%;
+
+  .show-award-box {
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.1) 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    border-radius: 32px;
+
+    .show-award {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 0 0 20px 0;
+      margin: 0 0 10px 0;
+    }
+  }
+}
+
+.gift-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.les {
+  background: url('#{$base-path}topbg-rule.png') no-repeat 0 0 / 100%;
+  width: 320px;
+  height: 92px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  color: rgba(118, 42, 123, 1);
+  font-size: 28px;
+  font-weight: 600;
+}

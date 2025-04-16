@@ -1,0 +1,116 @@
+$base-path: 'https://xs-image.pati.chat/static/h5/webpa/birthday/';
+
+.card-one {
+  background: url(#{$base-path}top1.png) no-repeat left top/749px 402px,
+    url(#{$base-path}bottom1.png) no-repeat left bottom/751px 283px;
+  padding: 12px 10px;
+  width: 750px;
+  margin: 0 auto;
+  position: relative;
+  padding: 80px 30px 80px 30px;
+
+  &::after {
+    content: '';
+    pointer-events: none;
+    position: absolute;
+    left: 0;
+    top: 401px;
+    bottom: 282px;
+    width: 749px;
+    background: url(#{$base-path}center11.png) repeat-y left top/749px 56px;
+  }
+
+  .title {
+    background: url(#{$base-path}title3.png) no-repeat left top/100%;
+    width: 560px;
+    height: 91px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 28px;
+    font-weight: 500;
+    position: absolute;
+    top: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+  }
+
+  .card-child {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+.marginb30 {
+  margin: 0 auto 50px !important;
+}
+
+.card-two {
+  background: url(#{$base-path}top2.png) no-repeat left top/680px 123px,
+    url(#{$base-path}bottom2.png) no-repeat left bottom/680px 123px;
+  padding: 12px 10px;
+  width: 680px;
+  margin: 0 auto;
+  position: relative;
+  padding: 70px 10px 30px 10px;
+
+  &.pad1 {
+    padding: 48px 10px 30px 10px;
+  }
+
+  &.pad2 {
+    padding: 34px 10px 30px 10px;
+  }
+
+  .title {
+    background: url(#{$base-path}title-bg.png) no-repeat left top/100%;
+    width: 522px;
+    height: 83px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 28px;
+    font-weight: 500;
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+  }
+
+  .title2 {
+    background: url(#{$base-path}title3.png) no-repeat left top/100%;
+    width: 560px;
+    height: 91px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 28px;
+    font-weight: 500;
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+  }
+
+  &::after {
+    content: '';
+    pointer-events: none;
+    position: absolute;
+    left: 0;
+    top: 122px;
+    bottom: 122px;
+    width: 680px;
+    background: url(#{$base-path}center2.png) repeat-y left top/680px 89px;
+  }
+
+  .card-child {
+    position: relative;
+    z-index: 2;
+  }
+}

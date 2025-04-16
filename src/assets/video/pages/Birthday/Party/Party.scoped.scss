@@ -1,0 +1,104 @@
+$base-path: 'https://xs-image.pati.chat/static/h5/webpa/birthday/';
+
+.heightline {
+  width: 1px;
+  height: 50px;
+}
+
+.pp2 {
+  color: rgba(152, 77, 225, 1);
+  font-size: 28px;
+  padding: 0px 30px;
+}
+
+.party-ul {
+  margin: 30px auto 80px;
+
+  .arrange {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background: url(#{$base-path}rankbg4.png) no-repeat left top/100%;
+    width: 704px;
+    height: 147px;
+    margin-left: -7px;
+    margin-bottom: 30px;
+    padding: 0 20px;
+
+    .time {
+      width: 121px;
+      height: 120px;
+      background: url(#{$base-path}calder.png) no-repeat left top/100%;
+      margin: 0 16px 0 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      flex-direction: column;
+      padding: 20px 0;
+      position: relative;
+
+      &::after {
+        content: '';
+        background: linear-gradient(
+          90deg,
+          rgba(164, 104, 255, 0) 0%,
+          rgba(164, 104, 255, 0.4) 50%,
+          rgba(164, 104, 255, 0) 100%
+        );
+        height: 1px;
+        width: 80px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      p {
+        font-size: 28px;
+        font-weight: 500;
+        background: linear-gradient(180deg, #8425fb 0%, #b38fff 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+    }
+
+    .info1 {
+      font-size: 30px;
+      font-weight: 500;
+      color: #fff;
+      width: 360px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .info2 {
+      font-size: 26px;
+      font-weight: 400;
+      color: #fff;
+    }
+
+    .right-now {
+      background: url(#{$base-path}btn2.png) no-repeat left top/100%;
+      width: 150px;
+      height: 51px;
+      color: rgba(162, 109, 15, 1);
+      font-size: 24px;
+      font-weight: 500;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &.right-now-dis {
+        filter: grayscale(1);
+      }
+    }
+  }
+}
+
+.no-p {
+  color: rgba(152, 77, 225, 1);
+  font-size: 26px;
+}

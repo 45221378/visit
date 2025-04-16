@@ -3,8 +3,10 @@
 import { createContext, useContext, type ReactNode } from 'react'
 
 import useAudioCtx from './audioCtx'
+import useLocale from './useLocal'
 const useGlobalData = () => ({
   ...useAudioCtx(),
+  ...useLocale()
 })
 
 const GlobalContext = createContext<ReturnType<typeof useGlobalData>>({} as any)

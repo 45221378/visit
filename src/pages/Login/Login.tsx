@@ -2,7 +2,7 @@ import { Select, Form, Input, Row, Col, Dropdown } from "antd";
 import "./Login.scss";
 import "/src/font.scss";
 import { MobileOutlined } from "@ant-design/icons";
-import { Toast ,  Radio, Space , Button} from "antd-mobile/2x";
+import { Toast, Radio, Space, Button } from "antd-mobile/2x";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -12,12 +12,14 @@ import Playdis from "/src/assets/new/play-dis1.png";
 import PlaydisTwo from "/src/assets/play-dis.png";
 
 import { useGlobalContext } from "/src/context/globalContext";
+import setLocaleInit from "/src/locale";
 export default function Login() {
+  const { setLocallan } = useGlobalContext();
   const [form] = Form.useForm();
   const navigate = useNavigate();
-  const [language, setLanguage] = useState("CN");
+  const [language, setLanguage] = useState("zh_cn");
   const [isRotated, setIsRotated] = useState(false);
-  const {isPlaying , doPlayAudioToggle} = useGlobalContext()
+  const { isPlaying, doPlayAudioToggle } = useGlobalContext();
   const userTpeList = [
     {
       value: "0",
@@ -52,26 +54,26 @@ export default function Login() {
   // ]
   const items: any = [
     {
-      key: "CN",
+      key: "zh_cn",
       label: "中文",
-      danger: language == "CN",
+      danger: language == "zh_cn",
     },
     {
-      key: "EN",
+      key: "en",
       label: "English",
-      danger: language == "EN",
+      danger: language == "en",
     },
   ];
 
   const onClick = ({ key }: any) => {
+    setLocaleInit(key);
     setLanguage(key);
+    setLocallan(key);
   };
-
 
   const handleDropdownVisibleChange = (visible: boolean) => {
     setIsRotated(visible);
   };
-
 
   const doGetCurrentTime = () => {
     const visitDate = new Date();
@@ -154,10 +156,11 @@ export default function Login() {
       .catch((err) => {});
   };
 
-  useEffect(() => {
-    // 确保在初始化时不应用动画
-    setIsRotated(false);
-  }, []);
+  // useEffect(() => {
+  //   // 确保在初始化时不应用动画
+  //   setIsRotated(false);
+  // }, []);
+
   return (
     <div className="login">
       {/* <div className="main-pic"></div> */}
@@ -172,12 +175,17 @@ export default function Login() {
               menu={{ items, selectable: true, onClick }}
               placement="bottom"
               onOpenChange={handleDropdownVisibleChange}
-              
               open={isRotated}
             >
               <div className="change-lan">
-                <span>{language == "CN" ? "中文" : "English"}</span>
-                <img src={Icon1} alt=""  className={`icon-img ${isRotated ? 'rotated' : 'not-rotated'}`}/>
+                <span>{language == "zh_cn" ? "中文" : "English"}</span>
+                <img
+                  src={Icon1}
+                  alt=""
+                  className={`icon-img ${
+                    isRotated ? "rotated" : "not-rotated"
+                  }`}
+                />
               </div>
             </Dropdown>
 
@@ -193,9 +201,9 @@ export default function Login() {
                 </Space>
               </Dropdown.Item>
             </Dropdown> */}
-            <div className="play-music">
+            {/* <div className="play-music">
               <img src={!isPlaying?Playdis:PlaydisTwo}  onClick={doPlayAudioToggle}  alt="" className="icon" />
-            </div>
+            </div> */}
           </div>
         </div>
         <div className="banner">

@@ -1,0 +1,216 @@
+$base-path: 'https://xs-image.pati.chat/static/h5/webpa/birthday/';
+
+.timeinfo,
+.timing-coin,
+.price {
+  color: rgba(152, 77, 225, 1);
+  font-size: 22px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 4px;
+  transform-origin: center center;
+}
+
+.price {
+  &::after {
+    content: '';
+    background: url(https://xs-image.pati.chat/static/h5/webpa/init/dia11.png)
+      no-repeat left center/100%;
+    width: 24px;
+    height: 20px;
+    margin: 0 0 0 2px;
+  }
+}
+
+.timing-coin {
+  &::after {
+    content: '';
+    background: url(https://xs-image.pati.chat/static/h5/webpa/init/coin.png)
+      no-repeat left center/100% 100%;
+    width: 24px;
+    height: 24px;
+    margin: 0 0 0 2px;
+  }
+}
+
+.awards {
+  position: relative;
+  margin: 0 14px 10px 14px;
+
+  .gift-main {
+    width: 176px;
+    height: 176px;
+    background: url(#{$base-path}reward-bg.png) no-repeat left top/100%;
+    position: relative;
+    margin: 0 auto;
+
+    .gift {
+      max-width: 120px;
+      max-height: 120px;
+      object-fit: contain;
+    }
+  }
+
+  .sty2 {
+    position: absolute;
+    top: 18px;
+    right: 8px;
+    background: linear-gradient(180deg, #f77bee 0%, #c157ed 100%);
+    border-radius: 12px 12px 12px 0;
+    color: #fff;
+    font-size: 24px;
+    padding: 4px 8px;
+    transform: scale(0.8);
+  }
+}
+
+.awards-name {
+  width: 176px;
+  margin: 8px auto 0;
+
+  .award-floating {
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+    box-sizing: border-box;
+    min-height: 34px;
+
+    .award-name-trans {
+      overflow: hidden;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      display: flex;
+
+      &.award-ani {
+        animation-name: awardani;
+        width: max-content;
+        justify-content: left;
+
+        .float-item {
+          max-width: max-content;
+        }
+      }
+
+      &.nodot {
+        .float-item {
+          max-width: inherit !important;
+          overflow: initial;
+          text-overflow: inherit;
+        }
+      }
+
+      .float-item {
+        color: #915526;
+        font-size: 24px;
+        font-weight: 500;
+        text-align: center;
+        min-width: 176px;
+        max-width: 179px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        transform-origin: center top;
+      }
+    }
+  }
+}
+
+@keyframes awardani {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.awards {
+  &.rule1 {
+    margin: 0 14px 30px 14px;
+
+    .gift-main {
+      width: 126px;
+      height: 122px;
+      border-radius: 0;
+      background: none;
+
+      .gift {
+        max-width: 110px;
+        max-height: 110px;
+        object-fit: contain;
+      }
+    }
+
+    .awards-name {
+      width: 126px;
+      margin: 0 auto;
+
+      .award-floating {
+        .award-name-trans {
+          .float-item {
+            min-width: 126px;
+            max-width: 129px;
+            color: rgba(152, 77, 225, 1);
+            font-size: 24px;
+          }
+        }
+      }
+    }
+  }
+
+  &.rule2 {
+    margin: 0 8px 20px 8px;
+
+    .gift-main {
+      width: 102px;
+      height: 102px;
+      border-radius: 0;
+      background: none;
+
+      .gift {
+        max-width: 90px;
+        max-height: 90px;
+        object-fit: contain;
+      }
+    }
+
+    .awards-name {
+      width: 112px;
+      margin: 0 auto;
+
+      .award-floating {
+        .award-name-trans {
+          .float-item {
+            min-width: 112px;
+            max-width: 115px;
+            color: rgba(152, 77, 225, 1);
+            font-size: 24px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.disk-active {
+  .awards {
+    .gift-main {
+      background: url(#{$base-path}reward-bg1.png) no-repeat left top/100%;
+    }
+  }
+}
+
+.probability {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  font-size: 24px;
+  color: #fff;
+  background: rgba(131, 123, 241, 0.6);
+  border-radius: 30px;
+  padding: 2px 7px;
+  transform: scale(0.8);
+}

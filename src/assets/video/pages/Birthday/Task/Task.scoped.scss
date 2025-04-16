@@ -1,0 +1,75 @@
+$base-path: 'https://xs-image.pati.chat/static/h5/webpa/birthday/';
+
+.task-ul {
+  padding: 6px 0 0 0;
+
+  .task-li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: url(#{$base-path}task-bg.png) no-repeat left top/100%;
+    width: 640px;
+    height: 158px;
+    margin: 0 auto;
+    padding: 10px 20px 24px 20px;
+
+    .left-des {
+      width: 400px;
+    }
+
+    .die1 {
+      font-size: 26px;
+      color: #fff;
+      font-weight: 500;
+      line-height: 1.1;
+    }
+
+    .show-imgs {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      margin: 6px 0 0 0;
+
+      img {
+        width: 40px;
+        height: 40px;
+        object-fit: contain;
+        margin: 0 10px 0 0;
+      }
+    }
+
+    .pp1 {
+      font-size: 22px;
+      color: #fff;
+      font-weight: 500;
+    }
+
+    .get {
+      color: rgba(162, 109, 15, 1);
+      font-size: 24px;
+      font-weight: 500;
+      background: url(#{$base-path}btn2.png) no-repeat left top/100%;
+      width: 150px;
+      height: 51px;
+    }
+
+    .geting {
+      color: rgba(254, 246, 255, 1);
+      font-size: 24px;
+      font-weight: 500;
+      background: url(#{$base-path}btn1.png) no-repeat left top/100%;
+      width: 150px;
+      height: 51px;
+    }
+
+    .geted {
+      color: rgba(254, 246, 255, 1);
+      font-size: 24px;
+      font-weight: 500;
+      background: url(#{$base-path}btn1.png) no-repeat left top/100%;
+      width: 150px;
+      height: 51px;
+      opacity: 0.5;
+    }
+  }
+}
