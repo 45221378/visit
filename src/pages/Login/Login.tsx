@@ -1,4 +1,4 @@
-import { Select, Form, Input, Row, Col, Dropdown } from "antd";
+import { Select, Form, Input, Row, Col, Dropdown, Divider } from "antd";
 import "./Login.scss";
 import "/src/font.scss";
 import { MobileOutlined } from "@ant-design/icons";
@@ -14,7 +14,7 @@ import PlaydisTwo from "/src/assets/play-dis.png";
 import { useGlobalContext } from "/src/context/globalContext";
 import setLocaleInit from "/src/locale";
 export default function Login() {
-  const { setLocallan } = useGlobalContext();
+  const { setLocallan, locallan } = useGlobalContext();
   const [form] = Form.useForm();
   const navigate = useNavigate();
   const [language, setLanguage] = useState("zh_cn");
@@ -66,9 +66,11 @@ export default function Login() {
   ];
 
   const onClick = ({ key }: any) => {
-    setLocaleInit(key);
+    setLocaleInit(key).then((res) => {
+      console.log(res);
+      setLocallan(res);
+    });
     setLanguage(key);
-    setLocallan(key);
   };
 
   const handleDropdownVisibleChange = (visible: boolean) => {
@@ -162,7 +164,8 @@ export default function Login() {
   // }, []);
 
   return (
-    <div className="login">
+    <div className={`${locallan} login`}>
+      {locallan === "en" ? <div className="noddd">131</div> : <div className="noddd">123</div>}
       {/* <div className="main-pic"></div> */}
       {/* <div className="login-box"></div> */}
       {/* <div className="login-two"></div> */}
@@ -207,6 +210,7 @@ export default function Login() {
           </div>
         </div>
         <div className="banner">
+          <p className="banner-p zhcn1">欢迎参观TKE中国工厂</p>
           <p className="line"></p>
           {/* <div className="bg-two"></div> */}
         </div>
@@ -215,7 +219,7 @@ export default function Login() {
           <p className="top-p">请访问者填写相关信息，谢谢配合！</p>
           <Form layout="horizontal" className="login-form" form={form}>
             <div className="form-item">
-              <div className="label">访客类型</div>
+              <div className="label">访客类别</div>
               <div className="form-input">
                 <Form.Item name="type">
                   <Select placeholder="请选择" options={userTpeList}></Select>

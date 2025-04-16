@@ -90,17 +90,24 @@
       }
     }
 
-    .icon-img{
-      width:20px;
+    .icon-img {
+      width: 20px;
       height: 20px;
     }
   }
 
   .banner {
-    background: url(/src/assets/new/wel.png) no-repeat center 100px/644px;
+    // background: url(/src/assets/new/wel.png) no-repeat center 100px/644px;
     width: 750px;
     height: 500px;
     padding: 178px 0 0 0;
+
+    .banner-p {
+      font-size: 62px;
+      color: #Fff;
+      font-weight: 800;
+      text-align: center;
+    }
 
     .line {
       width: 500px;
@@ -214,6 +221,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(180deg);
   }
@@ -223,6 +231,7 @@
   from {
     transform: rotate(180deg);
   }
+
   to {
     transform: rotate(0deg);
   }
@@ -233,9 +242,16 @@
 }
 
 .icon-img.rotated {
-  animation: rotate 0.3s forwards ;
+  animation: rotate 0.3s forwards;
 }
 
 .icon-img.not-rotated {
-  animation: rotateBack 0.3s forwards ;
+  animation: rotateBack 0.3s forwards;
+}
+
+
+.noddd {
+  position: fixed;
+  bottom: -100vh;
+  left: -100vw;
 }
