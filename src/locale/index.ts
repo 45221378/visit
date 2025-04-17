@@ -1,5 +1,6 @@
 import { useGlobalContext } from "../context/globalContext"
-
+import zh_cn from "./zh_cn.json"
+import en from "./en.json"
 declare global {
   interface Window {
     locale: Record<string, string>
@@ -15,8 +16,13 @@ export default async function setLocaleInit(
     const lan = lans[i]
     try {
       // eslint-disable-next-line no-await-in-loop
-      const module = await import(`/src/locale/${lan}.json`)
-      window.locale = module.default
+      if (lan === 'zh_cn') {
+        window.locale = zh_cn
+      } else {
+        window.locale = en
+      }
+      // const module = await import(`/src/locale/${lan}.json`)
+      // window.locale = module.default
       console.log(`./${lan}.json加载成功`)
       return lan
     } catch (err) {

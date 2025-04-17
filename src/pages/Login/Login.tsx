@@ -237,9 +237,10 @@ export default function Login() {
                 <Form.Item name="country">
                   <Select
                     placeholder="请选择内容"
-                    options={countryList.map((v: any) => ({
-                      label: language == "CN" ? v.chineseName : v.name,
+                    options={countryList.map((v: any, index) => ({
+                      label: language == "zh_cn" ? v.chineseName : v.name,
                       value: v.alpha_2,
+                      key: index
                     }))}
                   ></Select>
                 </Form.Item>
