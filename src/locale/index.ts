@@ -15,7 +15,7 @@ export default async function setLocaleInit(
     const lan = lans[i]
     try {
       // eslint-disable-next-line no-await-in-loop
-      const module = await import(`./${lan}.json`)
+      const module = await import(`/src/locale/${lan}.json`)
       window.locale = module.default
       console.log(`./${lan}.json加载成功`)
       return lan
