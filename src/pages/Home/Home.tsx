@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import "./Home.scope.scss";
+import '/src/font.scss'
 import { Title } from "./Title";
 import ImgOne from "/src/assets/images/img-one.png";
 
@@ -16,8 +17,11 @@ import img9 from "/src/assets/images/img-9.png";
 import img10 from "/src/assets/images/img-10.png";
 import img12 from "/src/assets/images/img-12.png";
 
-import VideoUrl from "/src/assets/video/video.mp4";
+import VideoUrl from "/src/assets/video/zh_cn.mp4";
 import PlayIcon from "/src/assets/images/play.png";
+
+import VideoUrlen from "/src/assets/video/en.mp4";
+import PlayIconen from "/src/assets/images/play.png";
 
 import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -28,9 +32,10 @@ import PlaydisTwo from "/src/assets/play-dis.png";
 
 import { useGlobalContext } from "/src/context/globalContext";
 const HomePage = () => {
+  const [language, setLanguage] = useState("zh_cn");
   const [isPlay, setIsPlay] = useState<boolean>(false);
   const [endedVideo, setEndedVideo] = useState<boolean>(false);
-  const {isPlaying , doPlayAudioToggle} = useGlobalContext()
+  const { isPlaying, doPlayAudioToggle } = useGlobalContext();
 
   const videoRef: any = useRef(null);
   const navigate = useNavigate();
@@ -38,6 +43,8 @@ const HomePage = () => {
   const queryParams = new URLSearchParams(location.search);
   const id = queryParams.get("id");
   const getComplete = () => {
+    navigate("/welcome");
+
     if (endedVideo) {
       axios
         .get("https://admin.somark.cn/api/visitor/update", {
@@ -64,6 +71,7 @@ const HomePage = () => {
         setEndedVideo(true);
       });
     }
+    setLanguage(localStorage.getItem("lan") || "zh_cn");
   }, [isPlay]);
   return (
     <div className="home">
@@ -72,10 +80,10 @@ const HomePage = () => {
           <div className="left-icon"></div>
           <div className="right-icon">
             {/* <img src={playdis} alt="" className="icon" /> */}
-            <img src={!isPlaying?Playdis:PlaydisTwo}  onClick={doPlayAudioToggle}  alt="" className="icon" />
+            {/* <img src={!isPlaying?Playdis:PlaydisTwo}  onClick={doPlayAudioToggle}  alt="" className="icon" /> */}
           </div>
         </div>
-        <div className="top-text"></div>
+        <div className={`top-text ${language == "zh_cn" ? "font-zhcn1" : "font-en1"}`}></div>
       </div>
 
       <div className="home-box">
@@ -134,7 +142,9 @@ const HomePage = () => {
                 controls
                 ref={videoRef}
                 className="video"
-                src={VideoUrl}
+                src={
+                  localStorage.getItem("lan") === "en" ? VideoUrlen : VideoUrl
+                }
               ></video>
             )}
             {!isPlay && <img src={img10} alt="" className="poster" />}
@@ -149,7 +159,7 @@ const HomePage = () => {
           </div>
           <div className="comment-box">
             <div className="box-one"></div>
-            <div className="box-two">
+            <div className={`${language == "zh_cn" ? "font-zhcn2" : "font-en2"} box-two`}>
               如有疑问，请随时向陪同工作人员寻求帮助
             </div>
             <img src={img8} alt="" className="people" />

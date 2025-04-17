@@ -1,11 +1,11 @@
-
-.welcome{
+.welcome {
   width: 100%;
-  .wel-top{
+
+  .wel-top {
     width: 100%;
     height: 1016px;
     background: url(/src/assets/images/welcome-top.png) 0 0 no-repeat;
-    background-size:  100% 100%;
+    background-size: 100% 100%;
     padding: 36px 0 0 20px;
 
     .logo {
@@ -14,45 +14,56 @@
       background: url(/src/assets/tke.png) no-repeat left top/100% 100%;
     }
   }
-  .wel-two{
+
+  .wel-two {
     width: 100%;
     height: 1212px;
     background: url(/src/assets/images/wel-two.png) 0 0 no-repeat;
-    background-size:  100% 100%;
-    margin-top:-600px;
-    .wel-text{
-      padding-top:700px;
-      .text{
+    background-size: 100% 100%;
+    margin-top: -600px;
+
+    .wel-text {
+      padding-top: 700px;
+
+      .text {
         text-align: center;
         height: 68px;
-        font-family: PingFang SC, PingFang SC;
         font-weight: 500;
         font-size: 48px;
         color: #FFFFFF;
         line-height: 56px;
         margin-bottom: 30px;
+        padding: 0 30px;
+
+        &.font-en1 {
+          font-size: 34px;
+          margin-bottom: 20px;
+        }
       }
     }
-    .arrow{
+
+    .arrow {
       width: 120px;
       height: 86px;
       background: url(/src/assets/images/arrow.png) 0 0 no-repeat;
-      background-size:  100% 100%;
+      background-size: 100% 100%;
       margin: 80px auto 0;
     }
+
     @keyframes down-up {
-      0%{
+      0% {
         transform: translateY(0) scale(1);
         opacity: 1;
-        
+
       }
-      100%{
+
+      100% {
         transform: translateY(25px) scale(0.9);
         opacity: 0.5;
       }
     }
 
-    .animte{
+    .animte {
       animation: down-up 1.5s ease-in-out infinite both;
     }
   }

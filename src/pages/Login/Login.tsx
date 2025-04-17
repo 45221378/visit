@@ -67,10 +67,11 @@ export default function Login() {
 
   const onClick = ({ key }: any) => {
     setLocaleInit(key).then((res) => {
-      console.log(res);
+      // console.log(res);
       setLocallan(res);
     });
     setLanguage(key);
+    localStorage.setItem("lan", key);
   };
 
   const handleDropdownVisibleChange = (visible: boolean) => {
@@ -165,7 +166,11 @@ export default function Login() {
 
   return (
     <div className={`${locallan} login`}>
-      {locallan === "en" ? <div className="noddd">131</div> : <div className="noddd">123</div>}
+      {locallan === "en" ? (
+        <div className="noddd">131</div>
+      ) : (
+        <div className="noddd">123</div>
+      )}
       {/* <div className="main-pic"></div> */}
       {/* <div className="login-box"></div> */}
       {/* <div className="login-two"></div> */}
@@ -209,8 +214,7 @@ export default function Login() {
             </div> */}
           </div>
         </div>
-        <div className="banner">
-          <p className="banner-p zhcn1">欢迎参观TKE中国工厂</p>
+        <div className={`${language == "zh_cn" ? "zhcn1" : "en1"} banner`}>
           <p className="line"></p>
           {/* <div className="bg-two"></div> */}
         </div>
