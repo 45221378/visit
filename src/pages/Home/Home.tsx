@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import "./Home.scope.scss";
-import '/src/font.scss'
+import "/src/font.scss";
 import { Title } from "./Title";
 import ImgOne from "/src/assets/images/img-one.png";
 
@@ -43,8 +43,6 @@ const HomePage = () => {
   const queryParams = new URLSearchParams(location.search);
   const id = queryParams.get("id");
   const getComplete = () => {
-    navigate("/welcome");
-
     if (endedVideo) {
       axios
         .get("https://admin.somark.cn/api/visitor/update", {
@@ -83,7 +81,11 @@ const HomePage = () => {
             {/* <img src={!isPlaying?Playdis:PlaydisTwo}  onClick={doPlayAudioToggle}  alt="" className="icon" /> */}
           </div>
         </div>
-        <div className={`top-text ${language == "zh_cn" ? "font-zhcn1" : "font-en1"}`}></div>
+        <div
+          className={`top-text ${
+            language == "zh_cn" ? "font-zhcn1" : "font-en1"
+          }`}
+        ></div>
       </div>
 
       <div className="home-box">
@@ -159,7 +161,11 @@ const HomePage = () => {
           </div>
           <div className="comment-box">
             <div className="box-one"></div>
-            <div className={`${language == "zh_cn" ? "font-zhcn2" : "font-en2"} box-two`}>
+            <div
+              className={`${
+                language == "zh_cn" ? "font-zhcn2" : "font-en2"
+              } box-two`}
+            >
               如有疑问，请随时向陪同工作人员寻求帮助
             </div>
             <img src={img8} alt="" className="people" />
@@ -175,7 +181,9 @@ const HomePage = () => {
         </div> */}
 
         <div
-          className="complete-btn"
+          className={`complete-btn ${
+            language == "zh_cn" ? "font-zhcn1" : "font-en1"
+          }`}
           onClick={() => {
             getComplete();
           }}

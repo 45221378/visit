@@ -219,11 +219,11 @@ export default function Login() {
           {/* <div className="bg-two"></div> */}
         </div>
         <div className="form-info">
-          <p className="top-p">根据蒂升安全规定</p>
-          <p className="top-p">请访问者填写相关信息，谢谢配合！</p>
+          <p className={`${language == "zh_cn" ? "font-zhcn1" : "font-en1"} top-p`}>根据蒂升安全规定</p>
+          <p className={`${language == "zh_cn" ? "font-zhcn1" : "font-en1"} top-p`}>请访问者填写相关信息，谢谢配合！</p>
           <Form layout="horizontal" className="login-form" form={form}>
             <div className="form-item">
-              <div className="label">访客类别</div>
+              <div className={`${language == "zh_cn" ? "font-zhcn2" : "font-en2"} label`}>访客类别</div>
               <div className="form-input">
                 <Form.Item name="type">
                   <Select placeholder="请选择" options={userTpeList}></Select>
@@ -232,7 +232,7 @@ export default function Login() {
             </div>
 
             <div className="form-item">
-              <div className="label">国家/地区</div>
+              <div className={`${language == "zh_cn" ? "font-zhcn2" : "font-en2"} label`}>国家/地区</div>
               <div className="form-input">
                 <Form.Item name="country">
                   <Select
@@ -247,7 +247,7 @@ export default function Login() {
             </div>
 
             <div className="form-item">
-              <div className="label">姓名</div>
+              <div className={`${language == "zh_cn" ? "font-zhcn2" : "font-en2"} label`}>姓名</div>
               <div className="form-input">
                 <Form.Item name="name">
                   <Input placeholder="请填写内容" />
@@ -256,7 +256,7 @@ export default function Login() {
             </div>
 
             <div className="form-item">
-              <div className="label">手机号</div>
+              <div className={`${language == "zh_cn" ? "font-zhcn2" : "font-en2"} label`}>手机号</div>
               <div className="form-input">
                 <Form.Item name="mobile">
                   {/* suffix={<MobileOutlined style={{marginInlineStart:-10}} />} */}
@@ -266,7 +266,7 @@ export default function Login() {
             </div>
 
             <div className="form-item">
-              <div className="label">访问厂区</div>
+              <div className={`${language == "zh_cn" ? "font-zhcn2" : "font-en2"} label`}>访问厂区</div>
               <div className="form-input">
                 <Form.Item name="factory">
                   <Select
@@ -285,7 +285,7 @@ export default function Login() {
             </div>
           </Form>
 
-          <div className="submit-btn" onClick={doSumitFormData}>
+          <div className={`${language == "zh_cn" ? "font-zhcn1" : "font-en1"} submit-btn`} onClick={doSumitFormData}>
             确认提交
           </div>
         </div>
