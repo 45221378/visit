@@ -159,10 +159,14 @@ export default function Login() {
       .catch((err) => {});
   };
 
-  // useEffect(() => {
-  //   // 确保在初始化时不应用动画
-  //   setIsRotated(false);
-  // }, []);
+  useEffect(() => {
+    const key = localStorage.getItem("lan") || "zh_cn";
+    setLocaleInit(key).then((res) => {
+      // console.log(res);
+      setLocallan(res);
+    });
+    setLanguage(key);
+  }, []);
 
   return (
     <div className={`${locallan} login`}>
@@ -215,15 +219,35 @@ export default function Login() {
           </div>
         </div>
         <div className={`${language == "zh_cn" ? "zhcn1" : "en1"} banner`}>
+          <div
+            className={`${language == "zh_cn" ? "zhcn1" : "en1"} bg-two`}
+          ></div>
           <p className="line"></p>
-          {/* <div className="bg-two"></div> */}
         </div>
         <div className="form-info">
-          <p className={`${language == "zh_cn" ? "font-zhcn1" : "font-en1"} top-p`}>根据蒂升安全规定</p>
-          <p className={`${language == "zh_cn" ? "font-zhcn1" : "font-en1"} top-p`}>请访问者填写相关信息，谢谢配合！</p>
+          <p
+            className={`${
+              language == "zh_cn" ? "font-zhcn1" : "font-en1"
+            } top-p`}
+          >
+            根据蒂升安全规定
+          </p>
+          <p
+            className={`${
+              language == "zh_cn" ? "font-zhcn1" : "font-en1"
+            } top-p`}
+          >
+            请访问者填写相关信息，谢谢配合！
+          </p>
           <Form layout="horizontal" className="login-form" form={form}>
             <div className="form-item">
-              <div className={`${language == "zh_cn" ? "font-zhcn2" : "font-en2"} label`}>访客类别</div>
+              <div
+                className={`${
+                  language == "zh_cn" ? "font-zhcn2" : "font-en2"
+                } label`}
+              >
+                访客类别
+              </div>
               <div className="form-input">
                 <Form.Item name="type">
                   <Select placeholder="请选择" options={userTpeList}></Select>
@@ -232,7 +256,13 @@ export default function Login() {
             </div>
 
             <div className="form-item">
-              <div className={`${language == "zh_cn" ? "font-zhcn2" : "font-en2"} label`}>国家/地区</div>
+              <div
+                className={`${
+                  language == "zh_cn" ? "font-zhcn2" : "font-en2"
+                } label`}
+              >
+                国家/地区
+              </div>
               <div className="form-input">
                 <Form.Item name="country">
                   <Select
@@ -240,7 +270,7 @@ export default function Login() {
                     options={countryList.map((v: any, index) => ({
                       label: language == "zh_cn" ? v.chineseName : v.name,
                       value: v.alpha_2,
-                      key: index
+                      key: index,
                     }))}
                   ></Select>
                 </Form.Item>
@@ -248,7 +278,13 @@ export default function Login() {
             </div>
 
             <div className="form-item">
-              <div className={`${language == "zh_cn" ? "font-zhcn2" : "font-en2"} label`}>姓名</div>
+              <div
+                className={`${
+                  language == "zh_cn" ? "font-zhcn2" : "font-en2"
+                } label`}
+              >
+                姓名
+              </div>
               <div className="form-input">
                 <Form.Item name="name">
                   <Input placeholder="请填写内容" />
@@ -257,7 +293,13 @@ export default function Login() {
             </div>
 
             <div className="form-item">
-              <div className={`${language == "zh_cn" ? "font-zhcn2" : "font-en2"} label`}>手机号</div>
+              <div
+                className={`${
+                  language == "zh_cn" ? "font-zhcn2" : "font-en2"
+                } label`}
+              >
+                手机号
+              </div>
               <div className="form-input">
                 <Form.Item name="mobile">
                   {/* suffix={<MobileOutlined style={{marginInlineStart:-10}} />} */}
@@ -267,7 +309,13 @@ export default function Login() {
             </div>
 
             <div className="form-item">
-              <div className={`${language == "zh_cn" ? "font-zhcn2" : "font-en2"} label`}>访问厂区</div>
+              <div
+                className={`${
+                  language == "zh_cn" ? "font-zhcn2" : "font-en2"
+                } label`}
+              >
+                访问厂区
+              </div>
               <div className="form-input">
                 <Form.Item name="factory">
                   <Select
@@ -286,7 +334,12 @@ export default function Login() {
             </div>
           </Form>
 
-          <div className={`${language == "zh_cn" ? "font-zhcn1" : "font-en1"} submit-btn`} onClick={doSumitFormData}>
+          <div
+            className={`${
+              language == "zh_cn" ? "font-zhcn1" : "font-en1"
+            } submit-btn`}
+            onClick={doSumitFormData}
+          >
             确认提交
           </div>
         </div>

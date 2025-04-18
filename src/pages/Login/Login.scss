@@ -125,10 +125,14 @@
     }
 
     .bg-two {
-      background: url(/src/assets/bg3.png) 0 0 no-repeat;
-      width: 750px;
-      height: 512px;
-      background-size: 100% 100%;
+      background: url(/src/assets/video/chin123.png) no-repeat center 20px/ 100%;
+      width: 330px;
+      height: 80px;
+      margin: 0 auto 20px;
+
+      &.en1 {
+        display: none;
+      }
     }
   }
 }
@@ -194,6 +198,7 @@
     font-weight: 400;
     font-size: 28px;
     color: #333333;
+    word-break: auto-phrase;
   }
 
   .form-input {

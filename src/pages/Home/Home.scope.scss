@@ -39,8 +39,7 @@
       bottom: -90px;
 
       &.font-en1 {
-        background: url(/src/assets/en-orange.png) no-repeat left top/702px;
-
+        background: url(/src/assets/video/en123.jpg) no-repeat left top/702px;
       }
     }
   }
@@ -264,37 +263,43 @@
       cursor: pointer;
     }
   }
+}
 
-  .title-normal {
-    margin: 10px auto;
-    width: fit-content;
-    padding: 0 20px;
-    font-family: PingFang SC, PingFang SC;
-    font-weight: 500;
-    font-size: 36px;
-    color: #333333;
-    position: relative;
-    height: 60px;
+.title-normal {
+  margin: 10px auto;
+  width: fit-content;
+  padding: 0 20px;
+  font-family: PingFang SC, PingFang SC;
+  font-weight: 500;
+  font-size: 36px;
+  color: #333333;
+  position: relative;
+  min-height: 60px;
 
-    .jiao-top {
-      width: 40px;
-      height: 40px;
-      position: absolute;
-      background: url("../../assets/images/jiao-top.png") 0 0 no-repeat;
-      background-size: 100% 100%;
-      left: -10px;
-      top: -9px;
+  .jiao-top {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    background: url("../../assets/images/jiao-top.png") 0 0 no-repeat;
+    background-size: 100% 100%;
+    left: -10px;
+    top: -9px;
 
-    }
+  }
 
-    .jiao-bottom {
-      width: 40px;
-      height: 40px;
-      position: absolute;
-      background: url("../../assets/images/jiao-bottom.png") 0 0 no-repeat;
-      background-size: 100% 100%;
-      right: -10px;
-      bottom: -4px;
-    }
+  span {
+    display: inline-block;
+    max-width: 550px;
+    text-align: center;
+  }
+
+  .jiao-bottom {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    background: url("../../assets/images/jiao-bottom.png") 0 0 no-repeat;
+    background-size: 100% 100%;
+    right: -10px;
+    bottom: -4px;
   }
 }

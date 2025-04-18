@@ -25,3 +25,7 @@
 .adm-form .adm-list-item-content-main {
   padding: 0;
 }
+
+.ant-select-selection-item {
+  width: 380px;
+}

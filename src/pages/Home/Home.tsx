@@ -15,6 +15,7 @@ import img7 from "/src/assets/images/img-7.png";
 import img8 from "/src/assets/images/img-8.png";
 import img9 from "/src/assets/images/img-9.png";
 import img10 from "/src/assets/images/img-10.png";
+import img10en from "/src/assets/video/en-video.png";
 import img12 from "/src/assets/images/img-12.png";
 
 import VideoUrl from "/src/assets/video/zh_cn.mp4";
@@ -149,7 +150,13 @@ const HomePage = () => {
                 }
               ></video>
             )}
-            {!isPlay && <img src={img10} alt="" className="poster" />}
+            {!isPlay && (
+              <img
+                src={localStorage.getItem("lan") === "en" ? img10en : img10}
+                alt=""
+                className="poster"
+              />
+            )}
             {!isPlay && (
               <img
                 src={PlayIcon}
