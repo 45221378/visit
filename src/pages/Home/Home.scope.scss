@@ -297,4 +297,37 @@
       bottom: -4px;
     }
   }
+
+  .title-en-normal {
+    margin: 10px auto;
+    width: fit-content;
+    padding: 0 20px;
+    font-family: PingFang SC, PingFang SC;
+    font-weight: 500;
+    font-size: 32px;
+    color: #333333;
+    position: relative;
+    height: 60px;
+
+    .jiao-top {
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      background: url("../../assets/images/jiao-top.png") 0 0 no-repeat;
+      background-size: 100% 100%;
+      left: -10px;
+      top: -9px;
+
+    }
+
+    .jiao-bottom {
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      background: url("../../assets/images/jiao-bottom.png") 0 0 no-repeat;
+      background-size: 100% 100%;
+      right: -10px;
+      bottom: -4px;
+    }
+  }
 }
