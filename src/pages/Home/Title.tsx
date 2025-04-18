@@ -12,7 +12,7 @@ export const Title: FC<{
       setLanguage(localStorage.getItem("lan") || "zh_cn");
     });
     return (
-      <div className={` ${language == "zh_cn" ? "title-normal" : "title-en-normal"
+      <div className={` ${language == "zh_cn" ? "title-normal" : "title-normal"
         }`} >
         <div className="jiao-top"></div>
         <span>{text}</span>
