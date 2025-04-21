@@ -33,6 +33,10 @@ export default function Login() {
       value: "2",
       label: "合作伙伴",
     },
+    {
+      value: "3",
+      label: "内部访客",
+    },
   ];
   // const countryList = [
   //   {
@@ -99,42 +103,42 @@ export default function Login() {
           if (values.country) {
             if (values.name) {
               if (values.factory) {
-                if (values.mobile) {
-                  const phoneRegex = /^1[3-9]\d{9}$/;
-                  if (!phoneRegex.test(values.mobile)) {
-                    Toast.show({
-                      content: "请输入有效的手机号",
-                    });
-                    return;
-                  }
-                  axios
-                    .post("https://admin.somark.cn/api/visitor/register", {
-                      ...values,
-                      visit_date: doGetCurrentTime(),
-                    })
-                    .then((res: any) => {
-                      console.log(res);
-                      if (res.data.code == 200) {
-                        Toast.show({
-                          content: "登记成功",
-                        });
-                        navigate(`/home?id=${res.data.data.id}`);
-                      } else {
-                        Toast.show({
-                          content: "登记失败,请重新再试",
-                        });
-                      }
-                    })
-                    .catch((err) => {
+                // if (values.mobile) {
+                // const phoneRegex = /^1[3-9]\d{9}$/;
+                // if (!phoneRegex.test(values.mobile)) {
+                //   Toast.show({
+                //     content: "请输入有效的手机号",
+                //   });
+                //   return;
+                // }
+                axios
+                  .post("https://admin.somark.cn/api/visitor/register", {
+                    ...values,
+                    visit_date: doGetCurrentTime(),
+                  })
+                  .then((res: any) => {
+                    console.log(res);
+                    if (res.data.code == 200) {
+                      Toast.show({
+                        content: "登记成功",
+                      });
+                      navigate(`/home?id=${res.data.data.id}`);
+                    } else {
                       Toast.show({
                         content: "登记失败,请重新再试",
                       });
+                    }
+                  })
+                  .catch((err) => {
+                    Toast.show({
+                      content: "登记失败,请重新再试",
                     });
-                } else {
-                  Toast.show({
-                    content: "请输入手机号",
                   });
-                }
+                // } else {
+                //   Toast.show({
+                //     content: "请输入手机号",
+                //   });
+                // }
               } else {
                 Toast.show({
                   content: "请选择厂区",
@@ -183,6 +187,7 @@ export default function Login() {
         <div className="nav-top">
           <div className="logo"></div>
           <div className="nav-right">
+            <p className="nav-right-p">语言选择</p>
             <Dropdown
               menu={{ items, selectable: true, onClick }}
               placement="bottom"
@@ -190,7 +195,7 @@ export default function Login() {
               open={isRotated}
             >
               <div className="change-lan">
-                <span>{language == "zh_cn" ? "中文" : "English"}</span>
+                <span>{language == "zh_cn" ? "English" : "中文"}</span>
                 <img
                   src={Icon1}
                   alt=""
@@ -291,7 +296,7 @@ export default function Login() {
                 </Form.Item>
               </div>
             </div>
-
+            {/* 
             <div className="form-item">
               <div
                 className={`${
@@ -302,11 +307,10 @@ export default function Login() {
               </div>
               <div className="form-input">
                 <Form.Item name="mobile">
-                  {/* suffix={<MobileOutlined style={{marginInlineStart:-10}} />} */}
                   <Input placeholder="请填写内容" />
                 </Form.Item>
               </div>
-            </div>
+            </div> */}
 
             <div className="form-item">
               <div
@@ -321,9 +325,9 @@ export default function Login() {
                   <Select
                     placeholder="请选择厂区"
                     options={[
-                      "上海松江工厂",
-                      "中山电梯工厂",
-                      "中山扶梯工厂",
+                      "TKE 松江电梯工厂",
+                      "TKE 中山电梯工厂",
+                      "TKE 中山扶梯工厂",
                     ].map((v: any) => ({
                       label: v,
                       value: v,
