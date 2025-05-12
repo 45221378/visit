@@ -83,9 +83,8 @@ const HomePage = () => {
           </div>
         </div>
         <div
-          className={`top-text ${
-            language == "zh_cn" ? "font-zhcn1" : "font-en1"
-          }`}
+          className={`top-text ${language == "zh_cn" ? "font-zhcn1" : "font-en1"
+            }`}
         ></div>
       </div>
 
@@ -142,8 +141,9 @@ const HomePage = () => {
           <div className="videx-box">
             {isPlay && (
               <video
-                controls
+                // controls
                 ref={videoRef}
+                playsInline={true}
                 className="video"
                 src={
                   localStorage.getItem("lan") === "en" ? VideoUrlen : VideoUrl
@@ -169,9 +169,8 @@ const HomePage = () => {
           <div className="comment-box">
             <div className="box-one"></div>
             <div
-              className={`${
-                language == "zh_cn" ? "font-zhcn2" : "font-en2"
-              } box-two`}
+              className={`${language == "zh_cn" ? "font-zhcn2" : "font-en2"
+                } box-two`}
             >
               如有疑问，请随时向陪同工作人员寻求帮助
             </div>
@@ -188,14 +187,13 @@ const HomePage = () => {
         </div> */}
 
         <div
-          className={`complete-btn ${
-            language == "zh_cn" ? "font-zhcn1" : "font-en1"
-          }`}
+          className={`complete-btn ${language == "zh_cn" ? "font-zhcn1" : "font-en1"
+            }`}
           onClick={() => {
             getComplete();
           }}
         >
-          点击完成
+          提交完成
         </div>
       </div>
     </div>
