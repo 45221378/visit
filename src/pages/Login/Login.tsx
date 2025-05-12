@@ -119,9 +119,6 @@ export default function Login() {
                   .then((res: any) => {
                     console.log(res);
                     if (res.data.code == 200) {
-                      Toast.show({
-                        content: "登记成功",
-                      });
                       navigate(`/home?id=${res.data.data.id}`);
                     } else {
                       Toast.show({
@@ -160,7 +157,7 @@ export default function Login() {
           });
         }
       })
-      .catch((err) => {});
+      .catch((err) => { });
   };
 
   useEffect(() => {
@@ -199,9 +196,8 @@ export default function Login() {
                 <img
                   src={Icon1}
                   alt=""
-                  className={`icon-img ${
-                    isRotated ? "rotated" : "not-rotated"
-                  }`}
+                  className={`icon-img ${isRotated ? "rotated" : "not-rotated"
+                    }`}
                 />
               </div>
             </Dropdown>
@@ -231,25 +227,22 @@ export default function Login() {
         </div>
         <div className="form-info">
           <p
-            className={`${
-              language == "zh_cn" ? "font-zhcn1" : "font-en1"
-            } top-p`}
+            className={`${language == "zh_cn" ? "font-zhcn1" : "font-en1"
+              } top-p`}
           >
             根据蒂升安全规定
           </p>
           <p
-            className={`${
-              language == "zh_cn" ? "font-zhcn1" : "font-en1"
-            } top-p`}
+            className={`${language == "zh_cn" ? "font-zhcn1" : "font-en1"
+              } top-p`}
           >
             请访问者填写相关信息，谢谢配合！
           </p>
           <Form layout="horizontal" className="login-form" form={form}>
             <div className="form-item">
               <div
-                className={`${
-                  language == "zh_cn" ? "font-zhcn2" : "font-en2"
-                } label`}
+                className={`${language == "zh_cn" ? "font-zhcn2" : "font-en2"
+                  } label`}
               >
                 访客类别
               </div>
@@ -262,9 +255,8 @@ export default function Login() {
 
             <div className="form-item">
               <div
-                className={`${
-                  language == "zh_cn" ? "font-zhcn2" : "font-en2"
-                } label`}
+                className={`${language == "zh_cn" ? "font-zhcn2" : "font-en2"
+                  } label`}
               >
                 国家/地区
               </div>
@@ -284,9 +276,8 @@ export default function Login() {
 
             <div className="form-item">
               <div
-                className={`${
-                  language == "zh_cn" ? "font-zhcn2" : "font-en2"
-                } label`}
+                className={`${language == "zh_cn" ? "font-zhcn2" : "font-en2"
+                  } label`}
               >
                 姓名
               </div>
@@ -314,9 +305,8 @@ export default function Login() {
 
             <div className="form-item">
               <div
-                className={`${
-                  language == "zh_cn" ? "font-zhcn2" : "font-en2"
-                } label`}
+                className={`${language == "zh_cn" ? "font-zhcn2" : "font-en2"
+                  } label`}
               >
                 访问厂区
               </div>
@@ -339,12 +329,11 @@ export default function Login() {
           </Form>
 
           <div
-            className={`${
-              language == "zh_cn" ? "font-zhcn1" : "font-en1"
-            } submit-btn`}
+            className={`${language == "zh_cn" ? "font-zhcn1" : "font-en1"
+              } submit-btn`}
             onClick={doSumitFormData}
           >
-            确认提交
+            下一步
           </div>
         </div>
       </div>
