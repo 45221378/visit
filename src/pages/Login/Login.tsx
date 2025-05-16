@@ -287,21 +287,19 @@ export default function Login() {
                 </Form.Item>
               </div>
             </div>
-            {/* 
             <div className="form-item">
               <div
-                className={`${
-                  language == "zh_cn" ? "font-zhcn2" : "font-en2"
-                } label`}
+                className={`${language == "zh_cn" ? "font-zhcn2" : "font-en2"
+                  } label`}
               >
-                手机号
+                公司/单位
               </div>
               <div className="form-input">
-                <Form.Item name="mobile">
-                  <Input placeholder="请填写内容" />
+                <Form.Item name="company">
+                  <Input placeholder="请填写公司名称" />
                 </Form.Item>
               </div>
-            </div> */}
+            </div>
 
             <div className="form-item">
               <div
