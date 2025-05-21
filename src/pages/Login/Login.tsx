@@ -112,7 +112,7 @@ export default function Login() {
                 //   return;
                 // }
                 axios
-                  .post("https://admin.somark.cn/api/visitor/register", {
+                  .post("/api/visitor/register", {
                     ...values,
                     visit_date: doGetCurrentTime(),
                   })

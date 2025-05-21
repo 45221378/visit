@@ -46,7 +46,7 @@ const HomePage = () => {
   const getComplete = () => {
     if (endedVideo) {
       axios
-        .get("https://admin.somark.cn/api/visitor/update", {
+        .get("/api/visitor/update", {
           params: { id },
         })
         .then((res: any) => {
